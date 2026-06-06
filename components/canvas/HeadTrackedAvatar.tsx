@@ -129,4 +129,4 @@ export function HeadTrackedAvatar({ modelUrl }: HeadTrackedAvatarProps) {
   return <HeadTrackingCore modelUrl={modelUrl} />;
 }
 
-useGLTF.preload("/models/humanoid.glb");
+useGLTF.preload("/models/model.glb");

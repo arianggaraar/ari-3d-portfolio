@@ -15,7 +15,7 @@ export function ModelStage() {
   const [dpr, setDpr] = useState<[number, number]>([1, 1]);
 
   const darkMode = resolvedTheme === "dark";
-  const modelUrl = profile.modelUrl || "/models/humanoid.glb";
+  const modelUrl = profile.modelUrl || "/models/model.glb";
 
   useEffect(() => {
     setDpr([1, Math.min(2, window.devicePixelRatio || 1)]);
@@ -91,7 +91,7 @@ export function ModelStage() {
       </div>
 
       <div className="pointer-events-none absolute bottom-4 left-4 right-4 z-20 flex flex-wrap gap-2">
-        {["360 yaw", "left / right", profile.modelFileName || "humanoid.glb"].map((item) => (
+        {["360 yaw", "left / right", profile.modelFileName || "model.glb"].map((item) => (
           <div
             key={item}
             className="rounded-full border border-white/10 bg-slate-950/45 px-3 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/85 backdrop-blur-md"

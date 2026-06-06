@@ -24,4 +24,4 @@ http://localhost:3000
 
 ## Catatan model
 
-Model default `public/models/humanoid.glb` adalah static single mesh, sehingga V3 menggunakan fallback static split untuk mensimulasikan head tracking. Untuk hasil paling natural, gunakan GLB/GLTF rigged dengan bone `Head` dan `Neck`.
+Model default `public/models/model.glb` adalah static single mesh, sehingga V3 menggunakan fallback static split untuk mensimulasikan head tracking. Untuk hasil paling natural, gunakan GLB/GLTF rigged dengan bone `Head` dan `Neck`.
