@@ -1,6 +1,6 @@
 import type { ProfileData } from "@/lib/types";
 
-export const DEFAULT_MODEL_URL = "/models/model.glb";
+export const DEFAULT_MODEL_URL = "/models/model-web.glb";
 
 export const defaultProfile: ProfileData = {
   name: "Ari Anggara",
@@ -11,7 +11,7 @@ export const defaultProfile: ProfileData = {
     "Profil multidisiplin yang menggabungkan rekayasa hardware, otomasi IoT, visualisasi 3D, dan pengembangan web full-stack untuk membangun sistem digital-fisik yang fungsional, estetis, dan siap diimplementasikan di lapangan.",
   profileImage: "/images/me.png",
   modelUrl: DEFAULT_MODEL_URL,
-  modelFileName: "model.glb",
+  modelFileName: "model-web.glb",
   skills: [
     {
       id: "hardware-iot",
