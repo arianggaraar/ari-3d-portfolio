@@ -30,20 +30,24 @@ function prepareModel(root: THREE.Object3D) {
 
       mat.side = THREE.DoubleSide;
 
+      /*
+        Jangan multiply warna material.
+        Ini menjaga warna asli texture/model tetap natural.
+      */
       if ("envMapIntensity" in mat) {
-        mat.envMapIntensity = 2.75;
+        mat.envMapIntensity = 1.65;
       }
 
       if ("roughness" in mat) {
-        mat.roughness = Math.min(Number(mat.roughness ?? 0.5), 0.42);
+        mat.roughness = Math.min(Number(mat.roughness ?? 0.55), 0.48);
       }
 
       if ("metalness" in mat) {
-        mat.metalness = Math.max(Number(mat.metalness ?? 0.2), 0.18);
+        mat.metalness = Math.max(Number(mat.metalness ?? 0.15), 0.18);
       }
 
-      if ("color" in mat && mat.color instanceof THREE.Color) {
-        mat.color.multiplyScalar(1.28);
+      if ("toneMapped" in mat) {
+        mat.toneMapped = true;
       }
 
       mat.needsUpdate = true;
@@ -256,8 +260,8 @@ export function HeadTrackedAvatar({ modelUrl }: HeadTrackedAvatarProps) {
   const modelState = useSafeModelState(modelUrl);
 
   return (
-    <Bounds fit clip observe margin={1.45}>
-      <Center position={[0, -0.48, 0]}>
+    <Bounds fit clip observe margin={0.98}>
+      <Center position={[0, -0.36, 0]}>
         {modelState === "checking" && <LoadingModel />}
         {modelState === "fallback" && <FallbackModel />}
         {modelState === "ready" && <LoadedModel modelUrl={modelUrl} />}
